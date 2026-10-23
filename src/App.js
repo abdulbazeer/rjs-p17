@@ -24,14 +24,11 @@ const products = [
 function App() {
   const initialState = [];
 
-  const [cart, dispatch] = useReducer(
-    cartReducer,
-    initialState
-  );
+  const [cart, dispatch] = useReducer(cartReducer, initialState);
 
   return (
-    <div className="container">
-      <h1>Shopping Cart</h1>
+    <div className="container" style={{ padding: "20px", fontFamily: "Arial" }}>
+      <h1>Shopping Cart Using useReducer</h1>
 
       <ProductList
         products={products}
