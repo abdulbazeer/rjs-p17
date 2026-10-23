@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
-import cartReducer from "./reducer";
-import ProductList from "./components/ProductList";
-import Cart from "./components/Cart";
+import cartReducer from "./reducer"; // reducer.js-ம் src-ல்தான் உள்ளது, எனவே './reducer'
+import ProductList from "./components/ProductList"; // components ஃபோல்டரில் உள்ளது
+import Cart from "./components/Cart"; // components ஃபோல்டரில் உள்ளது
 
 const products = [
   {
