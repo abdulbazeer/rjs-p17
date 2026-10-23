@@ -1,49 +1,29 @@
-import React, { useReducer } from "react";
-import cartReducer from "./reducer";
-import ProductList from "./components/ProductList";
-import Cart from "./components/Cart";
+import React from "react";
 
-const products = [
-  {
-    id: 1,
-    name: "Laptop",
-    price: 50000
-  },
-  {
-    id: 2,
-    name: "Headphones",
-    price: 2000
-  },
-  {
-    id: 3,
-    name: "Keyboard",
-    price: 1500
-  }
-];
-
-function App() {
-  const initialState = [];
-
-  const [cart, dispatch] = useReducer(
-    cartReducer,
-    initialState
-  );
-
+function ProductList({ products, dispatch }) {
   return (
-    <div className="container">
-      <h1>Shopping Cart</h1>
-
-      <ProductList
-        products={products}
-        dispatch={dispatch}
-      />
-
-      <Cart
-        cart={cart}
-        dispatch={dispatch}
-      />
-    </div>
+    <section className="product-list">
+      <h2>Products</h2>
+      <div>
+        {products.map((product) => (
+          <div key={product.id} className="product-item">
+            <h3>{product.name}</h3>
+            <p>Price: ₹{product.price.toLocaleString("en-IN")}</p>
+            <button
+              onClick={() =>
+                dispatch({
+                  type: "ADD_TO_CART",
+                  payload: product,
+                })
+              }
+            >
+              Add to Cart
+            </button>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
-export default App;
+export default ProductList;
