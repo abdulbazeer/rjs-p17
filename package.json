@@ -33,5 +33,11 @@
       "last 1 firefox version",
       "last 1 edge version"
     ]
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/tests/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+    ]
   }
 }
