@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import cartReducer from "../reducer"; 
+import cartReducer from "./reducer"; 
 import ProductList from "./components/ProductList"; 
 import Cart from "./components/Cart"; 
 
